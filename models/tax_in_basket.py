@@ -1,5 +1,3 @@
-from playwright.sync_api import Playwright, sync_playwright, expect
-
 class TaxInBasket:
     def __init__(self,page):
         self.page=page

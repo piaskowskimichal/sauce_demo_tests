@@ -1,7 +1,6 @@
 import sys
 sys.path.append('.')
 from models.tax_in_basket import TaxInBasket
-from playwright.sync_api import Playwright,Page
 
 def test_tax_in_basket(set_up):
 

@@ -1,15 +1,15 @@
-from playwright.sync_api import Playwright, sync_playwright, expect
+from playwright.sync_api import expect
 
 class RemoveFromBasket:
     def __init__(self,page):
         self.page=page
 
     def add_first_product(self):
-        add_first_product = self.page.locator("[data-test='add-to-cart-sauce-labs-backpack']")
+        add_first_product = self.page.locator("button:has-text('Add to cart')").first
         add_first_product.click()
 
     def add_second_product(self):
-        add_second_product = self.page.locator("[data-test='add-to-cart-sauce-labs-bike-light']")
+        add_second_product = self.page.locator("button:has-text('Add to cart')").nth(1)
         add_second_product.click()
 
     def basket_checkout(self):
@@ -17,7 +17,7 @@ class RemoveFromBasket:
         basket_checkout.click()
 
     def remove_product(self):
-        remove_product =  self.page.locator("[data-test='remove-sauce-labs-backpack']")
+        remove_product =  self.page.locator("button:has-text('Remove')").first
         remove_product.click()
 
     def basket_ok(self):
